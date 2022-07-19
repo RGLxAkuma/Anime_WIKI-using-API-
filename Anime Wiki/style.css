@@ -27,6 +27,11 @@
     box-shadow: -15px 15px 5px rgba(255, 255, 255, 0.2); 
 }
 
+.ind-row .card a
+{
+    margin: 10px;
+}
+
 .ind-row .card > .card-body {
     flex-grow: 1;
 }
@@ -42,7 +47,7 @@ body
 {
     margin: 0;
     overflow-x: hidden;
-    background: url(/anime-scenery-sitting-4k-hs.jpg) no-repeat;
+    background: url(/Je6YMV.jpg) no-repeat;
     background-size: cover;
 }
     
@@ -55,7 +60,7 @@ h1
     font-weight: 900;
     text-align: center;
     font-family: "Poppins";
-
+    color: blueviolet;
 }
 
 h3
@@ -65,6 +70,7 @@ h3
     font-weight: 600;
     margin: 30px;
     text-decoration:underline;
+    color: white;
     
 }
  

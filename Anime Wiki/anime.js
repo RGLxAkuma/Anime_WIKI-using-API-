@@ -9,6 +9,8 @@ function searchAnime(event)
 
     // console.log(query);
 
+   
+
     fetch(`${base_url}/search/anime?q=${query}&page=1`)
     .then(res=>res.json())
     .then(updateDom)
@@ -18,6 +20,7 @@ function searchAnime(event)
 function updateDom(data){
 
     const searchResult = document.getElementById('search-results');
+    console.log(data);
     const animeByCat = data.results
     .reduce((acc , anime)=>{
         const {type} = anime;
@@ -25,6 +28,8 @@ function updateDom(data){
         acc[type].push(anime);
         return acc;
     },{});
+
+    console.log(animeByCat);
 
     searchResult.innerHTML = Object.keys(animeByCat).map(key=>{
 
@@ -38,8 +43,8 @@ function updateDom(data){
                 <h5 class="card-title">${anime.title}</h5>
                 <p class="card-text">${anime.synopsis}</p>
             </div>
-            <div class="card-body">
-            <a href="${anime.url}" class="btn btn-primary">Find Out More</a>
+            <div class="card-body1">
+            <a href="/page.html?${anime.mal_id}" class="btn btn-primary">Find Out More</a>
             </div>
             </div>
             `
@@ -52,6 +57,8 @@ function updateDom(data){
         `
 
     }).join("");
+
+    const getID = form.addEventListener("submit")
     
     
 }
