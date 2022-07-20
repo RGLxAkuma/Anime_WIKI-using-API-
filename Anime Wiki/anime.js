@@ -1,4 +1,4 @@
-const base_url = "https://api.jikan.moe/v3";
+const base_url = "https://api.jikan.moe/v4";
 
 
 function searchAnime(event)
@@ -11,7 +11,7 @@ function searchAnime(event)
 
    
 
-    fetch(`${base_url}/search/anime?q=${query}&page=1`)
+    fetch(`${base_url}/anime?q=${query}&page=1`)
     .then(res=>res.json())
     .then(updateDom)
     .catch(err=>console.log(err.message));
@@ -21,7 +21,7 @@ function updateDom(data){
 
     const searchResult = document.getElementById('search-results');
     console.log(data);
-    const animeByCat = data.results
+    const animeByCat = data.data
     .reduce((acc , anime)=>{
         const {type} = anime;
         if(acc[type]===undefined) acc[type] = [];
@@ -38,13 +38,13 @@ function updateDom(data){
         .map(anime=>{
             return `
             <div class="card" style="width: 18rem;">
-            <img src="${anime.image_url}" class="card-img-top" alt="...">
+            <img src="${anime.images.jpg.image_url}" class="card-img-top" alt="...">
             <div class="card-body">
                 <h5 class="card-title">${anime.title}</h5>
-                <p class="card-text">${anime.synopsis}</p>
+                <p class="card-text" id="syno" maxlength="10">${anime.synopsis}</p>
             </div>
             <div class="card-body1">
-            <a href="/page.html?${anime.mal_id}" class="btn btn-primary">Find Out More</a>
+            <a href="page.html?${anime.mal_id}" class="btn btn-primary">Find Out More</a>
             </div>
             </div>
             `
@@ -59,7 +59,6 @@ function updateDom(data){
     }).join("");
 
     const getID = form.addEventListener("submit")
-    
     
 }
 

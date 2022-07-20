@@ -24,12 +24,27 @@
     justify-content: center;
     align-items: center;
     margin: 10px;
-    box-shadow: -15px 15px 5px rgba(255, 255, 255, 0.2); 
+}
+
+.ind-row a:hover
+{
+    transform: scale(1.05);
+    background-color:blue;
+}
+
+#syno
+{
+    display:inline-block;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 30ch;
 }
 
 .ind-row .card a
 {
     margin: 10px;
+    transition: all 0.5s ease;
 }
 
 .ind-row .card > .card-body {
@@ -49,8 +64,7 @@ body
     overflow-x: hidden;
     background: url(/Je6YMV.jpg) no-repeat;
     background-size: cover;
-}
-    
+}  
 
 
 h1
