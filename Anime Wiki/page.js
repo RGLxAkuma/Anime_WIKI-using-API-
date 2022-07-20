@@ -10,7 +10,7 @@ fetch(`https://api.jikan.moe/v4/anime/${animeId}`)
 
 function getInfo(data)
 {
-    console.log(data);
+    // console.log(data);
     const title = document.querySelector('#tlt');
     title.innerHTML = `${data.data.title}`;
     const image = document.querySelector('#anm_img');
@@ -45,7 +45,6 @@ function getInfo(data)
     const animeUrl = document.querySelector('#anime_url');
     animeUrl.innerHTML = "LINK - " + `<a href="${data.data.url}" target="_blank">${data.data.url}</a>`;
     const std = `${data.data.studios.length}`;
-    console.log(std);
     const studio = document.querySelector('#studio');
     studio.innerHTML = "STUDIO - ";
     for(let i=0;i<std;i++)

@@ -20,7 +20,7 @@ function searchAnime(event)
 function updateDom(data){
 
     const searchResult = document.getElementById('search-results');
-    console.log(data);
+    // console.log(data);
     const animeByCat = data.data
     .reduce((acc , anime)=>{
         const {type} = anime;
@@ -29,7 +29,7 @@ function updateDom(data){
         return acc;
     },{});
 
-    console.log(animeByCat);
+    // console.log(animeByCat);
 
     searchResult.innerHTML = Object.keys(animeByCat).map(key=>{
 
@@ -57,8 +57,6 @@ function updateDom(data){
         `
 
     }).join("");
-
-    const getID = form.addEventListener("submit")
     
 }
 
