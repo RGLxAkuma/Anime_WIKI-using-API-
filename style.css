@@ -1,0 +1,90 @@
+@import url('https://fonts.googleapis.com/css2?family=Encode+Sans+Semi+Expanded:wght@500&family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.ind-row{
+    display: flex;
+    flex-direction: row;
+    overflow-x: scroll;
+    justify-content: stretch;
+}
+
+.ind-row > *{
+    flex-basis: 20rem;
+    flex-shrink: 0;
+}
+
+.ind-row .card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 10px;
+}
+
+.ind-row a:hover
+{
+    transform: scale(1.05);
+    background-color:blue;
+}
+
+#syno
+{
+    display:inline-block;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 30ch;
+}
+
+.ind-row .card a
+{
+    margin: 10px;
+    transition: all 0.5s ease;
+}
+
+.ind-row .card > .card-body {
+    flex-grow: 1;
+}
+
+.ind-row .card > .card-img-top{
+    flex-basis: 25rem;
+    flex-shrink: 0;
+    overflow-y: hidden;
+    background-color: grey;
+}
+
+body
+{
+    margin: 0;
+    overflow-x: hidden;
+    /* background: url(/Je6YMV.jpg) no-repeat;
+    background-size: cover; */
+}  
+
+
+h1
+{
+    margin: 40px;
+    font-size: 3rem;
+    font-weight: 900;
+    text-align: center;
+    font-family: "Poppins";
+    color: blueviolet;
+}
+
+h3
+{
+    font-family: "Poppins";
+    text-align: center;
+    font-weight: 600;
+    margin: 30px;
+    text-decoration:underline;
+    color: white;
+    
+}
+ 
