@@ -40,6 +40,20 @@
 span , p ,h2
 {
     color: black;
+    margin: 0px 30px;
+    padding: 0px 20px;
+    text-align: center;
+}
+
+#anime_ulr
+{   
+    margin: 0px 30px;
+    padding: 0px 20px;
+}
+
+p{
+    margin: 0px 20px;
+    padding: 0px 20px;
 }
 
 a
