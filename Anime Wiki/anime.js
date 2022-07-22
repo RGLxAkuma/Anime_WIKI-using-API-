@@ -1,5 +1,74 @@
 const base_url = "https://api.jikan.moe/v4";
 
+function topAnime()
+{
+    fetch(`https://api.jikan.moe/v4/top/anime`)
+    .then(res=>res.json())
+    .then(basePageAnime)
+    .catch(err=>console.log(err.message));
+}
+
+topAnime();
+
+function basePageAnime(data)
+{
+    for(let i=0;i<10;i++)
+    {
+        const topRes = document.querySelector('.ind-row');
+        topRes.innerHTML += 
+        `
+        <div class="cards">
+        <div class="card">
+            <img src="${data.data[i].images.jpg.image_url}" class="card-img-top" alt="...">
+        <div class="card-body">
+            <h5 class="card-title">${data.data[i].title}</h5>
+            <p class="card-text" id="syno" maxlength="10">${data.data[i].synopsis}</p>
+        </div>
+        <div class="card-body1">
+        <a href="page.html?${data.data[i].mal_id}" class="btn btn-primary">Find Out More</a>
+        </div>
+        </div>
+        </div>
+        `
+    }
+}
+
+function topchar()
+{
+    fetch(`https://api.jikan.moe/v4/top/characters`)
+    .then(res=>res.json())
+    .then(basePageChar)
+    .catch(err=>console.log(err.message));
+}
+
+topchar();
+
+function basePageChar(data)
+{
+    console.log(data);
+    for(let i=0;i<10;i++)
+    {
+        const topChar = document.querySelector('.top-char');
+        topChar.innerHTML += 
+        `
+        <div class="cards">
+            <div class="card">
+               
+                <img src="${data.data[i].images.jpg.image_url}" class="card-img-top" alt="...">
+                   
+                <div class="card-body">
+                    <h5 class="card-title">${data.data[i].name}</h5>
+                    <p class="card-text" id="syno" maxlength="10">${data.data[i].about}</p>
+                </div>
+            <div class="card-body1">
+                <a href=${data.data[i].url} class="btn btn-primary" target="_blank">Find Out More</a>
+                </div>
+            </div>
+        </div>
+        `
+    }
+}
+
 
 function searchAnime(event)
 {
@@ -37,7 +106,8 @@ function updateDom(data){
         .sort((a,b)=>a.episodes-b.episodes)
         .map(anime=>{
             return `
-            <div class="card" style="width: 18rem;">
+            <div class="cards">
+            <div class="card">
             <img src="${anime.images.jpg.image_url}" class="card-img-top" alt="...">
             <div class="card-body">
                 <h5 class="card-title">${anime.title}</h5>
@@ -45,6 +115,7 @@ function updateDom(data){
             </div>
             <div class="card-body1">
             <a href="page.html?${anime.mal_id}" class="btn btn-primary">Find Out More</a>
+            </div>
             </div>
             </div>
             `
@@ -63,9 +134,11 @@ function updateDom(data){
 function pageLoad(){
 
     const form = document.getElementById('search_form');
-    form.addEventListener("submit" , searchAnime );
+    form.addEventListener("submit" , searchAnime);
 
 
 }
+
+
 
 window.addEventListener("load" , pageLoad);

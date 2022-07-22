@@ -4,33 +4,80 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: "Poppins";
+
+}
+
+.logo a
+{
+    text-decoration: none;
+    color:#1DA1F2;
+    font-size: 3rem;
+    font-weight: 900;
+    text-align: center;
+    font-family: "Poppins";
+    border-radius: 50%;
+    box-sizing: border-box;
+    box-shadow: 7px 7px 10px #cbced1, -7px -7px 10px white;
+}
+
+.logo
+{
+    transition: all 0.5s ease;
+    
+}
+
+.logo:hover
+{
+    transform: scale(1.04);
+}
+
+.section
+{
+    position: absolute;
 }
 
 .ind-row{
     display: flex;
+    overflow-x: auto;
     flex-direction: row;
-    overflow-x: scroll;
-    justify-content: stretch;
-}
-
-.ind-row > *{
-    flex-basis: 20rem;
-    flex-shrink: 0;
+    align-items: center;
 }
 
 .ind-row .card {
+    position:relative;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin: 10px;
+    padding: 10px;
+    border: none;
+    transition: all 0.5s ease;
+    transform: scale(0.75);
+    max-width: 340px;
+    background: #ecf0f3;
+    box-shadow: 14px 14px 20px #cbced1, -14px -14px 20px white;
+
+}
+
+.cards
+{
+    align-items: center;
+}
+
+.ind-row .card:hover
+{
+    transform: scale(0.85);
+    z-index: 100;
+    box-shadow: none;
 }
 
 .ind-row a:hover
 {
-    transform: scale(1.05);
-    background-color:blue;
+    transform: scale(1.07);
+    box-shadow: none;
 }
+
 
 #syno
 {
@@ -40,31 +87,43 @@
     text-overflow: ellipsis;
     max-width: 30ch;
 }
-
 .ind-row .card a
 {
+    background-color: #1d5dd4;
     margin: 10px;
     transition: all 0.5s ease;
+    box-shadow: 6px 6px 6px #cbced1, -6px -6px 6px 
 }
 
 .ind-row .card > .card-body {
     flex-grow: 1;
 }
 
-.ind-row .card > .card-img-top{
-    flex-basis: 25rem;
-    flex-shrink: 0;
-    overflow-y: hidden;
-    background-color: grey;
+.card .card-title
+{
+    text-align: center;
+}
+
+.card-img-top
+{
+    flex-basis: 20rem;
 }
 
 body
 {
     margin: 0;
     overflow-x: hidden;
-    /* background: url(/Je6YMV.jpg) no-repeat;
-    background-size: cover; */
 }  
+
+html, body {
+    overflow-y: scroll;
+    scrollbar-width: none;
+  }
+  
+body::-webkit-scrollbar {
+    width: 0;
+    height: 0;
+  }
 
 
 h1
@@ -81,10 +140,27 @@ h3
 {
     font-family: "Poppins";
     text-align: center;
-    font-weight: 600;
-    margin: 30px;
-    text-decoration:underline;
-    color: white;
+    font-weight: 800;
+    font-size: 2.2em;
+    margin-top: 70px;
+    color: #1DA1F2;
+    text-transform:uppercase;
     
 }
+
+input
+{
+    background-color: #ecf0f3;
+    padding: 10px;
+    padding-left: 20px;
+    height: 50px;
+    font-size: 14px;
+    border-radius: 50px;
+    box-shadow: inset 6px 6px 6px #cbced1, inset -6px -6px 6px white;
+}
  
+
+.form-control
+{
+    background-color: #ecf0f3;
+}
